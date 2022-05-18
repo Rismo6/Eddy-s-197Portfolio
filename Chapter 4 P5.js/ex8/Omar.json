@@ -1,0 +1,69 @@
+{
+  "toons": [
+
+{
+  "name":"Bobby",
+  "caption":"tiny",
+  "r":90,
+  "g":190,
+  "b":200,
+  "a":250,
+  "strokeR":255,
+  "strokeG":255,
+  "strokeB":255,
+  "strokeA":100,
+  "petalwidth":500,
+  "petalheight":10,
+  "torso": 33,
+  "belly": 60,
+  "posX":50,
+  "posY":90,
+  "moveX":[5, -3, 4, -6, -3, 3, 4, -2],
+  "moveY":[2, 4, 4, 6, -3, 3, 4, -2],
+  "nextX":0,
+  "nextY":0
+},
+
+{
+  "name":"Charlie",
+  "caption":"Round",
+  "r":170,
+  "g":80,
+  "b":90,
+  "a":235,
+  "petalheight":200,
+  "petalwidth":160,
+  "head": 34,
+  "torso": 300,
+  "belly": 0,
+  "posX":190,
+  "posY":100,
+  "moveX":[20, -0.5, 0.4, -2,-0.3,0.3,0.7,-0.2],
+  "moveY":[0.5, -0.5, 0.4, -3,-0.3,3,-0.7,0.2],
+  "nextX":0,
+  "nextY":0
+},
+
+{
+  "name":"Spec",
+  "caption":"Big Guns",
+  "petalwidth":10,
+  "petalheight":30,
+  "r":0,
+  "g":255,
+  "b":120,
+  "a":105,
+  "head": 34,
+  "torso": 42,
+  "belly": 5,
+  "posX":190,
+  "posY":100,
+  "moveX":[-10, 0.5, -0.4, 2, 0.3, -0.3, -0.7, 0.2],
+  "moveY":[-10, 0.5, -0.4, 3, 0.3, -3, 0.7, -0.2],
+  "nextX":0,
+  "nextY":0
+}
+
+]
+
+}

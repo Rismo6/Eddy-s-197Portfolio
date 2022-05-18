@@ -1,0 +1,75 @@
+{
+  "toons": [
+
+{
+  "name":"Chrysanthemum",
+  "caption":"giver of gifts",
+  "r":255,
+  "g":255,
+  "b":255,
+  "a":60,
+  "strokeR":0,
+  "strokeG":255,
+  "strokeB":0,
+  "strokeA":100,
+  "petalwidth":70,
+  "petalheight":10,
+  "torso": 12,
+  "belly": 40,
+  "posX":50,
+  "posY":90,
+  "moveX":[5, -1, 5, -1, 6, -1, 4, -2],
+  "moveY":[5, -3, 4, -3, 6, -3, 4, -2],
+  "nextX":0,
+  "nextY":0
+},
+
+{
+  "name":"Reindeer lichen",
+  "caption":"frostweed",
+  "r":0,
+  "g":200,
+  "b":200,
+  "a":80,
+  "strokeR":0,
+  "strokeG":0,
+  "strokeB":255,
+  "petalheight":6,
+  "petalwidth":30,
+  "head": 34,
+  "torso": 6,
+  "belly": 30,
+  "posX":190,
+  "posY":100,
+  "moveX":[15, -0.5, 0.4, -2,-15,0.3,0.7,-0.2],
+  "moveY":[0.5, -0.5, 15, -3,-0.3,3,-0.7,0.2],
+  "nextX":0,
+  "nextY":0
+},
+
+{
+  "name":"Gloriosa",
+  "caption":"Flame lily",
+  "petalwidth":18,
+  "petalheight":5,
+  "r":193,
+  "g":30,
+  "b":30,
+  "a":170,
+  "strokeR":255,
+  "strokeG":255,
+  "strokeB":0,
+  "head": 34,
+  "torso": 11,
+  "belly": 25,
+  "posX":190,
+  "posY":100,
+  "moveX":[-10, 0.5, -5, 2, 0.3, -0.3, -0.7, 0.2],
+  "moveY":[-10, 0.5, -0.4, 10, 0.3, -3, 0.7, -0.2],
+  "nextX":0,
+  "nextY":0
+}
+
+]
+
+}
