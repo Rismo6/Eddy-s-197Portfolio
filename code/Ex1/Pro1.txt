@@ -1,0 +1,104 @@
+float r =0;
+float g =0;
+float b =0;
+
+float x;
+float y;
+
+
+
+float t = 0;
+float inc = PI/50;
+
+char currentkey ='1';
+
+void setup(){
+  size(600,600);
+  fill(0);
+  text("Press 'q' or 'Q' to create a new canvas", 250,200);
+  fill(250,250,250);
+  stroke(0,0,0);
+}
+
+void draw(){
+  
+   
+  ebpalette();
+  eb2newcanvas();
+ 
+  if(mousePressed){
+  ebdrawChoice();
+  }
+   
+}
+
+void ebdrawChoice(){
+  char currentkey = key;
+  
+  switch(currentkey){
+  case '1':
+    println("1");
+    ebcd(1,3);
+    break;
+  case '2':
+    println("2");
+    ebcds();
+    break;
+  case '3':
+    println("3");
+    ebe();
+   break;
+  
+  }
+}
+
+
+void ebpalette(){
+  //chart for loop
+  fill(100,100,100);
+  for(float x=5; x< 100; x= x+32){
+    for(int y=150; y<250; y= y+ 32){ 
+     rect(x ,y ,30,30);
+    
+    } 
+  }
+}
+
+void ebcd(int s, int s2){
+  pushMatrix();
+    strokeWeight(s);
+    point(mouseX +cos(t)*50, mouseY+ sin(t) * 50);
+    t= t+ inc;
+  popMatrix();
+  
+  pushMatrix();
+    
+    fill(0, 0, 0);
+    circle(mouseX, mouseY, s2);
+  popMatrix();
+}
+
+void ebcds(){
+  strokeWeight(1);
+    line(mouseX +cos(t/2)*50, mouseY+ sin(t/2) * 50, (mouseX+20) + cos(t/2)*50, (mouseY+20)+ sin(t/2) * 50);
+    t= t+ inc;
+}
+
+
+void eb2newcanvas(){
+  stroke(0,0,0);
+  if(key =='q' || key=='Q'){
+   r= 250;
+   g= 250;
+   b=250;
+   fill(r,g,b);
+   rect(100,0,600,600);
+   println("clearpage");
+  }
+}
+
+void ebe(){
+  stroke(250);
+  fill(250);
+  circle(mouseX,mouseY,50);
+}

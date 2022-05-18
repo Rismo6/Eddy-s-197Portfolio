@@ -1,0 +1,78 @@
+
+int counterY = 300;
+int H = 0;
+int counter = 0;
+
+float a = 0.0;
+float inc = TWO_PI/100.0;
+
+void setup(){
+  size(400,400);
+  background(40);
+  
+}
+
+void draw(){
+  
+  background(40);
+  translate(width/2, height/2);
+  
+  stroke(250,random(250),random(50));
+noFill();
+
+for(int point=0; point<200; point+=20){
+curve(counter, -counter, point, point , point, point, counter, counter);
+for(int point1=-200; point1<0; point1+=20){
+curve(-counter, -counter, point1, point1, point1, point1, -counter, counter);
+  
+}
+}
+//for(int x =0; x<100; x+= 20){
+
+
+//}
+
+if(counter<2050){
+}else{
+  counter= 0;
+}
+
+ counter = counter +1;
+println(counter);
+  
+  
+  
+  
+  fill(250,250,250);
+  rect(-100,-100,200,200);
+  
+  fill(250,0,0);
+  rect(-100, counterY,200, H);
+  if(counterY>-100){
+  } else{
+    counterY= 300;
+  }
+   if(H<200){
+     
+  } else{
+    H= 0;
+  }
+  
+  if(H>100){
+    println("OverHeating!");
+  } if(H> 150){
+    println("Beginning the Cooling process");
+  }else{
+    println("");
+  } 
+  
+   H+= 1;
+  counterY = counterY - 1;
+  push();
+  strokeWeight(10);
+  stroke(random(250),random(250),random(250));
+    point(6+ cos(a + 5)*50.0, 6+ sin(a)*50.0);
+    point(5+ cos(a +5)*60.0, 5+ sin(a)*60.0);
+    a = a + inc;
+  pop();
+}

@@ -1,0 +1,55 @@
+void setup(){
+size(400,400);
+background(0);
+}
+
+void draw(){
+  noFill();
+  noStroke();
+  background(0,0,0);
+  ebcircle();
+   ebminic();
+   ebdc();
+}
+
+void ebcircle(){
+   noStroke();
+   fill(250,250,250);
+  ebshine(0,0,40);
+  ebshine(355, 0, 40);
+  
+ 
+}
+
+void ebminic(){
+ noStroke();
+ fill(250,250,250);
+ midmini(0,0,25);
+
+}
+
+void ebshine(int v, int z, int d){
+  fill(250,0,0);
+   for(int Vx1=20; Vx1<120; Vx1+=45){
+    for(int Vy1=0; Vy1<height; Vy1+=50){ 
+      circle(Vx1 + v, Vy1 + z, d);
+    }
+  }
+}
+
+void midmini(int v, int z, int d){
+  fill(250,150,250);
+   for(int Vx2=145; Vx2<350; Vx2+=30){
+    for( int Vy2=20; Vy2<height; Vy2+=44){ 
+  circle(Vx2 +v , Vy2 +z, d);
+   //circle(310,350,75);
+  }
+  }
+}
+
+void ebdc(){
+  pushMatrix();
+  translate(width/2, height/2);
+  circle(110,150, 80);
+  popMatrix();
+}

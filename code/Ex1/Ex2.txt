@@ -1,0 +1,51 @@
+int value= 0;
+int value1= 0;
+int value2= 0;
+int value3= 0;
+PImage b;
+
+
+void setup(){
+  size(400,400);
+  b = loadImage("Closeup.JPG");
+}
+
+
+//image, image tint
+void draw(){
+  if(!mousePressed){
+    stroke(0,0,value3);
+  }
+  line(width/2, 0, width/2, value);
+  rect(value2, value2,value1 , value1);
+  tint(0,0,250);
+  image(b,160,160,70, 70);
+   saveFrame("output1/Ex_####.png");
+}
+
+//moouseMoved boolean
+void mouseMoved(){
+  value= value + 1;
+  if (value>400){
+    value=400;
+    value1 = value1 +1;
+  }
+  
+  value3+=1;
+  if (value3>250){
+    value3=0;
+    
+  }
+}
+
+//Text, Keypressed boolean
+void keyPressed(){
+  if(key=='W'){
+    
+      value2+=1;
+      if(value2>400){
+        value2=400;
+        text("Blue is a Color", 100, 100);
+      }
+    }
+ }

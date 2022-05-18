@@ -1,0 +1,111 @@
+int count= 5;
+
+
+ebnew[] theArr= new ebnew[count];
+
+void setup(){
+  size(1200,800);
+  background(235, 175, 76);
+  for (int i=0; i< count; i++){
+  theArr[i]= new ebnew(random(1,1000),random(350, height/2), color(235, 175, 76));
+   
+  }
+}
+
+void draw(){
+  background(235, 175, 76);
+  for (int i=0; i< count; i++){
+ theArr[i].display();
+theArr[i].explosion(width/2,height/2, color(235, 175, 76));
+
+  }
+  
+   saveFrame("outputPro3/gol_####.png");
+}
+
+////ebnew
+class ebnew{ 
+  float   lox, loy;
+  float counter=0;
+  color c;
+  float cx =width/2;
+  float cy =height/2;
+  float speedx=random(-1,1);
+  float speedy=random(-1,1);
+  int pos=16;
+  float pla= pos*random(10,100);
+  int nos=0;
+  float inc = PI/2;
+  float t=0;
+  
+  ebnew(float lx, float ly, color lc){
+    lox=lx;
+    loy=ly;
+    c= lc;
+    rectMode(CENTER);
+  }
+  //Method 1 ((C))
+  //A series of rectangles are displayed. The rectangle is repeated with the Fibonacci method.  
+  //Their height and width grow depending on the rectangle. 
+  void display(){
+      strokeWeight(4);
+      stroke(0,0,250);
+      fill(c);
+      //A for lope which determinds the fibonacci sequence
+      for(int i=pos; i>8;i--){
+        rect(0,0,fib(i)+speedx,fib(i));
+        stroke(0,0,250);
+        rect(lox,loy,fib(i),fib(i));
+        rect(lox+pla/3,loy,fib(i)+speedx,fib(i));
+        stroke(250,0,0);
+        rect(lox+pla/5,loy,fib(i),fib(i)+ speedy);
+        rect(lox+pla/9,loy,fib(i),fib(i));
+        rect(lox+pla/10,loy,fib(i),fib(i) + speedy);
+        stroke(0,0,250);
+        rect(800,800,fib(i)+speedx,fib(i));
+      } 
+  
+    
+    speedx++;
+    speedy++;
+  }
+  //Method 2 ((c))
+  // A circle is displayed. The circle is repeated with the Fibonacci method.
+  // The circle grows and shrinks. 
+  void explosion(float lx, float ly, color lc){
+    println(counter);
+     lox=lx;
+    loy=ly;
+    c= lc;
+    stroke(250,0,0);
+    //A for lope which determinds the fibonacci sequence
+    for(int i=11; i>8;i--){
+      //FrameCount and a few other variables calculates the diameter ((A))
+      circle(lox,loy,fib(i)+ (frameCount/4)*nos);
+      
+      if(counter>370){
+        nos=2;
+      }
+      if(counter>600){
+        nos=1;
+      }
+      if(counter>800){
+        nos=0;
+      }
+    }
+    
+    counter++;
+  }
+  
+//Method 3 ((C))
+//The Fibonacci Sequence ((B))
+  int fib(int n) {
+    int a = 1, b = 1;
+    for (int i = 3; i <= n; i++) {
+      int c = a + b;
+      a = b;
+      b = c;
+    }
+    return b;
+  }
+}

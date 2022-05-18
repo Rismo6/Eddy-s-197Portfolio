@@ -1,0 +1,48 @@
+int curvecount= 20;
+
+Ebcurve[] curveArr= new Ebcurve[curvecount];
+
+void setup(){
+  background(200);
+  size(800,600);
+  for(int i=0; i<curvecount; i++){
+  curveArr[i]= new Ebcurve();
+  }
+}
+
+void draw(){
+  background(200);
+  for(int i=0; i<curvecount; i++){
+  curveArr[i].display();
+  }
+  saveFrame("outputEx5/gol_####.png");
+}
+
+////Ebcurve
+class Ebcurve{
+  float[] dc = {100,300,200,-100};
+  int counter=0;
+  int downter=0;
+
+  Ebcurve(){
+  print("hello");
+ dc[0] = random(200,500);
+ dc[2] =random(0,600);
+ fill(random(1,170),20,random(1,170));
+ noStroke();
+  }
+
+  void display(){
+   
+   curve(dc[0] + counter,dc[1] + random(100),dc[0] + counter,dc[0],dc[2] + counter,dc[0],dc[2] + counter,dc[3]);
+   curve(dc[0] + counter,dc[1],dc[0] + counter,dc[0],dc[2] + counter,dc[0],dc[2] + counter,dc[3]);
+    
+  counter++;
+  dc[1]-= counter/2;
+  dc[3]+= counter/2;
+  
+  }
+
+
+
+}
